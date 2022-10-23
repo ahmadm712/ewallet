@@ -7,6 +7,10 @@ var mainRoutes = (RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const HomePage(),
       );
+    case OnboadingPage.routeName:
+      return MaterialPageRoute(
+        builder: (context) => OnboadingPage(),
+      );
     default:
       MaterialPageRoute(
         builder: (context) => const ErrorPage(),

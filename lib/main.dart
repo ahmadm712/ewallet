@@ -1,3 +1,4 @@
+import 'package:ewallet/shared/styles.dart';
 import 'package:ewallet/ui/pages/pages.dart';
 import 'package:ewallet/ui/pages/splash/splash_page.dart';
 import 'package:ewallet/utils/routes.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: Colors.red,
+          primary: kPurpleColor,
         ),
       ),
       home: const SplashScreen(),
