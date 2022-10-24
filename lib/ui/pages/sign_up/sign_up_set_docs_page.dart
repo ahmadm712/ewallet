@@ -1,20 +1,19 @@
 import 'package:ewallet/shared/styles.dart';
-import 'package:ewallet/ui/pages/sign_up/sign_up_page.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
 import 'package:ewallet/ui/widgets/forms.dart';
 import 'package:ewallet/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatefulWidget {
-  const SignInPage({super.key});
+class SignUpSetDocsPage extends StatefulWidget {
+  const SignUpSetDocsPage({super.key});
 
-  static const String routeName = '/signin';
+  static const String routeName = '/signup-setdoc';
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<SignUpSetDocsPage> createState() => _SignUpSetDocsPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignUpSetDocsPageState extends State<SignUpSetDocsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +37,7 @@ class _SignInPageState extends State<SignInPage> {
               ),
             ),
             Text(
-              'Sign in &\nGrow Your Finance',
+              'Verify Your\nAccount',
               style: blackTextStyle.copyWith(
                 fontSize: 20,
                 fontWeight: semiBold,
@@ -54,34 +53,54 @@ class _SignInPageState extends State<SignInPage> {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // * NOTE  Email Input
-                  const CustomFormField(title: 'Email Addreses'),
-                  const SizedBox(height: 16),
-                  // * NOTE  Password Input
-                  const CustomFormField(
-                    title: 'Password',
-                    obsecureText: true,
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: InkWell(
-                      onTap: () {},
-                      child: Text(
-                        'Forgot Password',
-                        style: blueTextStyle,
+                  Container(
+                    width: 120,
+                    height: 120,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: kLightBackgroundColor,
+                    ),
+                    child: Center(
+                      child: Image.asset(
+                        '${assetImage}ic_upload.png',
+                        width: 32,
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 16,
+                  ),
+                  // Container(
+                  //   width: 120,
+                  //   height: 120,
+                  //   decoration: const BoxDecoration(
+                  //     shape: BoxShape.circle,
+                  //     image: DecorationImage(
+                  //       fit: BoxFit.cover,
+                  //       image: AssetImage(
+                  //         '${assetImage}img_profile.png',
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Text(
+                    'Passport/ID CARD',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 18,
+                      fontWeight: medium,
+                    ),
+                  ),
+
+                  const SizedBox(
+                    height: 50,
                   ),
                   CustomFilledButton(
-                    title: 'Sign In',
+                    title: 'Continue',
                     onPresed: () {},
                   ),
                 ],
@@ -91,11 +110,9 @@ class _SignInPageState extends State<SignInPage> {
               height: 50,
             ),
             CustomTextButton(
-              title: 'Create New Account',
-              onPresed: () {
-                Navigator.pushNamed(context, SignUpPage.routeName);
-              },
-            ),
+              title: 'Skip For Now',
+              onPresed: () {},
+            )
           ],
         ),
       ),
