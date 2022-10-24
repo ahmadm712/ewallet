@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ewallet/shared/styles.dart';
+import 'package:ewallet/ui/pages/sign_in/sign_in_page.dart';
 import 'package:ewallet/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -107,7 +108,7 @@ class _OnboadingPageState extends State<OnboadingPage> {
                         height: 50,
                         child: TextButton(
                           onPressed: () {
-                            carouselController.nextPage();
+                            Navigator.pushNamed(context, SignInPage.routeName);
                           },
                           style: TextButton.styleFrom(
                               backgroundColor: kPurpleColor,
@@ -129,7 +130,7 @@ class _OnboadingPageState extends State<OnboadingPage> {
                         height: 24,
                         child: TextButton(
                           onPressed: () {
-                            carouselController.nextPage();
+                            Navigator.pushNamed(context, SignInPage.routeName);
                           },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero,
