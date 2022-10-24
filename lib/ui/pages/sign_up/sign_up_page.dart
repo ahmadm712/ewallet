@@ -1,20 +1,20 @@
 import 'package:ewallet/shared/styles.dart';
-import 'package:ewallet/ui/pages/sign_up/sign_up_page.dart';
+import 'package:ewallet/ui/pages/sign_in/sign_in_page.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
 import 'package:ewallet/ui/widgets/forms.dart';
 import 'package:ewallet/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatefulWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
-  static const String routeName = '/sign-in';
+  static const String routeName = '/sign-up';
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +38,7 @@ class _SignInPageState extends State<SignInPage> {
               ),
             ),
             Text(
-              'Sign in &\nGrow Your Finance',
+              'Join Us to Unlock\nYour Growth',
               style: blackTextStyle.copyWith(
                 fontSize: 20,
                 fontWeight: semiBold,
@@ -56,6 +56,9 @@ class _SignInPageState extends State<SignInPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const CustomFormField(title: 'Full Name'),
+
+                  const SizedBox(height: 16),
                   // * NOTE  Email Input
                   const CustomFormField(title: 'Email Addreses'),
                   const SizedBox(height: 16),
@@ -64,24 +67,12 @@ class _SignInPageState extends State<SignInPage> {
                     title: 'Password',
                     obsecureText: true,
                   ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: InkWell(
-                      onTap: () {},
-                      child: Text(
-                        'Forgot Password',
-                        style: blueTextStyle,
-                      ),
-                    ),
-                  ),
+
                   const SizedBox(
                     height: 30,
                   ),
                   CustomFilledButton(
-                    title: 'Sign In',
+                    title: 'Continue',
                     onPresed: () {},
                   ),
                 ],
@@ -91,9 +82,9 @@ class _SignInPageState extends State<SignInPage> {
               height: 50,
             ),
             CustomTextButton(
-              title: 'Create New Account',
+              title: 'Sign in',
               onPresed: () {
-                Navigator.pushNamed(context, SignUpPage.routeName);
+                Navigator.pushNamed(context, SignInPage.routeName);
               },
             ),
           ],
