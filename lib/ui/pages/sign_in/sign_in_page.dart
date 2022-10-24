@@ -1,4 +1,5 @@
 import 'package:ewallet/shared/styles.dart';
+import 'package:ewallet/ui/pages/pages.dart';
 import 'package:ewallet/ui/pages/sign_up/sign_up_page.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
 import 'package:ewallet/ui/widgets/forms.dart';
@@ -82,7 +83,13 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   CustomFilledButton(
                     title: 'Sign In',
-                    onPresed: () {},
+                    onPresed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        HomePage.routeName,
+                        (route) => false,
+                      );
+                    },
                   ),
                 ],
               ),

@@ -99,7 +99,10 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
                   const SizedBox(
                     height: 30,
                   ),
-                  const CustomFormField(title: 'Set PIN (6 Digit number)'),
+                  const CustomFormField(
+                    title: 'Set PIN (6 Digit number)',
+                    obsecureText: true,
+                  ),
                   const SizedBox(
                     height: 30,
                   ),

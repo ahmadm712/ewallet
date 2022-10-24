@@ -1,4 +1,5 @@
 import 'package:ewallet/shared/styles.dart';
+import 'package:ewallet/ui/pages/sign_up/sign_up_success_page.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
 import 'package:ewallet/ui/widgets/forms.dart';
 import 'package:ewallet/utils/constants.dart';
@@ -111,7 +112,9 @@ class _SignUpSetDocsPageState extends State<SignUpSetDocsPage> {
             ),
             CustomTextButton(
               title: 'Skip For Now',
-              onPresed: () {},
+              onPresed: () {
+                Navigator.pushNamed(context, SignUpSucces.routeName);
+              },
             )
           ],
         ),

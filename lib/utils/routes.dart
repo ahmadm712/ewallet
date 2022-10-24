@@ -3,6 +3,7 @@ import 'package:ewallet/ui/pages/sign_in/sign_in_page.dart';
 import 'package:ewallet/ui/pages/sign_up/sign_up_page.dart';
 import 'package:ewallet/ui/pages/sign_up/sign_up_set_docs_page.dart';
 import 'package:ewallet/ui/pages/sign_up/sign_up_set_profile_page.dart';
+import 'package:ewallet/ui/pages/sign_up/sign_up_success_page.dart';
 import 'package:flutter/material.dart';
 
 var mainRoutes = (RouteSettings settings) {
@@ -30,6 +31,14 @@ var mainRoutes = (RouteSettings settings) {
     case SignUpSetDocsPage.routeName:
       return MaterialPageRoute(
         builder: (context) => const SignUpSetDocsPage(),
+      );
+    case SignUpSucces.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SignUpSucces(),
+      );
+    case HomePage.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const HomePage(),
       );
     default:
       MaterialPageRoute(
