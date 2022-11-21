@@ -1,5 +1,4 @@
 import 'package:ewallet/shared/styles.dart';
-import 'package:ewallet/ui/pages/sign_in/sign_in_page.dart';
 import 'package:ewallet/ui/pages/sign_up/sign_up_set_profile_page.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
 import 'package:ewallet/ui/widgets/forms.dart';

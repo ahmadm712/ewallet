@@ -1,7 +1,6 @@
 import 'package:ewallet/shared/styles.dart';
 import 'package:ewallet/ui/pages/sign_up/sign_up_success_page.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
-import 'package:ewallet/ui/widgets/forms.dart';
 import 'package:ewallet/utils/constants.dart';
 import 'package:flutter/material.dart';
 
