@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 
 class CustomFormField extends StatelessWidget {
   const CustomFormField({
-    super.key,
+    Key? key,
     required this.title,
-    this.controller,
     this.obsecureText = false,
-  });
+    this.controller,
+  }) : super(key: key);
   final String title;
   final bool obsecureText;
   final TextEditingController? controller;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -30,12 +29,12 @@ class CustomFormField extends StatelessWidget {
           controller: controller,
           obscureText: obsecureText,
           decoration: InputDecoration(
+            contentPadding: const EdgeInsets.all(12),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(14),
             ),
-            contentPadding: const EdgeInsets.all(12),
           ),
-        ),
+        )
       ],
     );
   }

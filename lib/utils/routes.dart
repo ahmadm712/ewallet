@@ -1,5 +1,9 @@
 import 'package:ewallet/ui/pages/pages.dart';
-import 'package:ewallet/ui/pages/sign-in/sign_in_page.dart';
+import 'package:ewallet/ui/pages/sign_in/sign_in_page.dart';
+import 'package:ewallet/ui/pages/sign_up/sign_up_page.dart';
+import 'package:ewallet/ui/pages/sign_up/sign_up_set_docs_page.dart';
+import 'package:ewallet/ui/pages/sign_up/sign_up_set_profile_page.dart';
+import 'package:ewallet/ui/pages/sign_up/sign_up_success_page.dart';
 import 'package:flutter/material.dart';
 
 var mainRoutes = (RouteSettings settings) {
@@ -12,10 +16,29 @@ var mainRoutes = (RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const OnboadingPage(),
       );
-
     case SignInPage.routeName:
       return MaterialPageRoute(
         builder: (context) => const SignInPage(),
+      );
+    case SignUpPage.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SignUpPage(),
+      );
+    case SignUpSetProfilePage.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SignUpSetProfilePage(),
+      );
+    case SignUpSetDocsPage.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SignUpSetDocsPage(),
+      );
+    case SignUpSucces.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SignUpSucces(),
+      );
+    case HomePage.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const HomePage(),
       );
     default:
       return MaterialPageRoute(

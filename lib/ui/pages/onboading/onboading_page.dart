@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ewallet/shared/styles.dart';
-import 'package:ewallet/ui/pages/sign-in/sign_in_page.dart';
+import 'package:ewallet/ui/pages/sign_in/sign_in_page.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
 import 'package:ewallet/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -95,17 +95,16 @@ class _OnboadingPageState extends State<OnboadingPage> {
                     children: [
                       CustomFilledButton(
                         title: 'Get Started',
-                        onTap: () {},
-                      ),
-                      const SizedBox(
-                        height: 20,
+                        onPresed: () {
+                          Navigator.pushNamed(context, SignInPage.routeName);
+                        },
                       ),
                       CustomTextButton(
                         title: 'Sign In',
-                        onTap: () {
+                        onPresed: () {
                           Navigator.pushNamed(context, SignInPage.routeName);
                         },
-                      )
+                      ),
                     ],
                   )
                 ] else ...[
@@ -147,8 +146,9 @@ class _OnboadingPageState extends State<OnboadingPage> {
                       const Spacer(),
                       CustomFilledButton(
                         width: 150,
+                        height: 50,
                         title: 'Continue',
-                        onTap: () {
+                        onPresed: () {
                           carouselController.nextPage();
                         },
                       ),

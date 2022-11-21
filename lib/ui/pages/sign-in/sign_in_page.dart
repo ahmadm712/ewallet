@@ -71,7 +71,7 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 CustomFilledButton(
                   title: 'Sign In',
-                  onTap: () {},
+                  onPresed: () {},
                 ),
               ],
             ),
@@ -81,7 +81,7 @@ class _SignInPageState extends State<SignInPage> {
           ),
           CustomTextButton(
             title: 'Create New Account',
-            onTap: () {},
+            onPresed: () {},
           )
         ],
       ),

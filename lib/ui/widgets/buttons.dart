@@ -1,30 +1,28 @@
-import 'package:ewallet/shared/styles.dart';
 import 'package:flutter/material.dart';
 
+import 'package:ewallet/shared/styles.dart';
+
 class CustomFilledButton extends StatelessWidget {
-  const CustomFilledButton({
-    super.key,
-    this.backgroundColor = kPurpleColor,
-    required this.title,
-    this.width = double.infinity,
-    this.height = 50,
-    this.onTap,
-  });
-  final VoidCallback? onTap;
-  final Color backgroundColor;
   final String title;
   final double width;
   final double height;
-
+  final VoidCallback? onPresed;
+  const CustomFilledButton({
+    Key? key,
+    required this.title,
+    this.width = double.infinity,
+    this.height = 50,
+    this.onPresed,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
       height: height,
       child: TextButton(
-        onPressed: onTap,
+        onPressed: onPresed,
         style: TextButton.styleFrom(
-            backgroundColor: backgroundColor,
+            backgroundColor: kPurpleColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(56),
             )),
@@ -41,24 +39,26 @@ class CustomFilledButton extends StatelessWidget {
 }
 
 class CustomTextButton extends StatelessWidget {
-  const CustomTextButton({
-    super.key,
-    this.onTap,
-    required this.title,
-    this.width = double.infinity,
-    this.height = 24,
-  });
-  final VoidCallback? onTap;
   final String title;
   final double width;
   final double height;
+  final VoidCallback? onPresed;
+
+  const CustomTextButton({
+    Key? key,
+    required this.title,
+    this.width = double.infinity,
+    this.height = 24,
+    this.onPresed,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.only(top: 20),
       width: width,
       height: height,
       child: TextButton(
-        onPressed: onTap,
+        onPressed: onPresed,
         style: TextButton.styleFrom(
           padding: EdgeInsets.zero,
         ),
