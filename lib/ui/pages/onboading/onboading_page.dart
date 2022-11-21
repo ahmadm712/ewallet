@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ewallet/shared/styles.dart';
+import 'package:ewallet/ui/pages/sign-in/sign_in_page.dart';
+import 'package:ewallet/ui/widgets/buttons.dart';
 import 'package:ewallet/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -15,17 +17,6 @@ class OnboadingPage extends StatefulWidget {
 class _OnboadingPageState extends State<OnboadingPage> {
   int currentIndex = 0;
   CarouselController carouselController = CarouselController();
-
-  List<String> titles = [
-    "Grow Your\nFinancial Today",
-    "Build From\nZero to Freedom",
-    "Start Together",
-  ];
-  List<String> subtitles = [
-    "Our System is helping you to\nachieve a better goal",
-    "We Provide tips for you so that\nyou can adapt easier",
-    "We Will guide you to where\nyou wanted it too",
-  ];
 
   @override
   void initState() {
@@ -102,45 +93,18 @@ class _OnboadingPageState extends State<OnboadingPage> {
                 if (currentIndex == 2) ...[
                   Column(
                     children: [
-                      SizedBox(
-                        width: double.infinity,
-                        height: 50,
-                        child: TextButton(
-                          onPressed: () {
-                            carouselController.nextPage();
-                          },
-                          style: TextButton.styleFrom(
-                              backgroundColor: kPurpleColor,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(56),
-                              )),
-                          child: Text(
-                            'Get Started',
-                            style: whiteTextStyle.copyWith(
-                              fontSize: 16,
-                              fontWeight: semiBold,
-                            ),
-                          ),
-                        ),
+                      CustomFilledButton(
+                        title: 'Get Started',
+                        onTap: () {},
                       ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 20),
-                        width: double.infinity,
-                        height: 24,
-                        child: TextButton(
-                          onPressed: () {
-                            carouselController.nextPage();
-                          },
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Text(
-                            'Sign In',
-                            style: greyTextStyle.copyWith(
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      CustomTextButton(
+                        title: 'Sign In',
+                        onTap: () {
+                          Navigator.pushNamed(context, SignInPage.routeName);
+                        },
                       )
                     ],
                   )
@@ -181,27 +145,13 @@ class _OnboadingPageState extends State<OnboadingPage> {
                         ),
                       ),
                       const Spacer(),
-                      SizedBox(
+                      CustomFilledButton(
                         width: 150,
-                        height: 50,
-                        child: TextButton(
-                          onPressed: () {
-                            carouselController.nextPage();
-                          },
-                          style: TextButton.styleFrom(
-                              backgroundColor: kPurpleColor,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(56),
-                              )),
-                          child: Text(
-                            'Continue',
-                            style: whiteTextStyle.copyWith(
-                              fontSize: 16,
-                              fontWeight: semiBold,
-                            ),
-                          ),
-                        ),
-                      )
+                        title: 'Continue',
+                        onTap: () {
+                          carouselController.nextPage();
+                        },
+                      ),
                     ],
                   )
                 ],

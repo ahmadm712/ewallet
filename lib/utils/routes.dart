@@ -1,4 +1,5 @@
 import 'package:ewallet/ui/pages/pages.dart';
+import 'package:ewallet/ui/pages/sign-in/sign_in_page.dart';
 import 'package:flutter/material.dart';
 
 var mainRoutes = (RouteSettings settings) {
@@ -9,10 +10,15 @@ var mainRoutes = (RouteSettings settings) {
       );
     case OnboadingPage.routeName:
       return MaterialPageRoute(
-        builder: (context) => OnboadingPage(),
+        builder: (context) => const OnboadingPage(),
+      );
+
+    case SignInPage.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SignInPage(),
       );
     default:
-      MaterialPageRoute(
+      return MaterialPageRoute(
         builder: (context) => const ErrorPage(),
       );
   }
