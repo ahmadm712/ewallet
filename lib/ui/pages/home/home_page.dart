@@ -20,9 +20,7 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
           buildProfile(),
-          const Center(
-            child: Text('Home Screen'),
-          ),
+          buildCardWidget(),
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -149,6 +147,62 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           )
+        ],
+      ),
+    );
+  }
+
+  Widget buildCardWidget() {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(30),
+      margin: const EdgeInsets.only(top: 30),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(28),
+        image: const DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage(
+            '${assetImage}img_bg_card.png',
+          ),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Shayna Hanna',
+            style: whiteTextStyle.copyWith(
+              fontSize: 18,
+              fontWeight: medium,
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Text(
+            '**** **** **** 2309',
+            style: whiteTextStyle.copyWith(
+              fontSize: 18,
+              fontWeight: medium,
+              letterSpacing: 6,
+            ),
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          Text(
+            'Balance',
+            style: whiteTextStyle.copyWith(
+              fontWeight: regular,
+            ),
+          ),
+          Text(
+            'Rp 12.500',
+            style: whiteTextStyle.copyWith(
+              fontWeight: semiBold,
+              fontSize: 24,
+            ),
+          ),
         ],
       ),
     );
