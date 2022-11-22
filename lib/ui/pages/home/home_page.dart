@@ -1,4 +1,5 @@
 import 'package:ewallet/shared/styles.dart';
+import 'package:ewallet/ui/widgets/home_services_item.dart';
 import 'package:ewallet/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,7 @@ class _HomePageState extends State<HomePage> {
           buildProfile(),
           buildCardWidget(),
           buildLevel(),
+          buildServices()
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -253,6 +255,52 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: kLightBackgroundColor,
               valueColor: AlwaysStoppedAnimation(kGreenColor),
             ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildServices() {
+    return Container(
+      margin: const EdgeInsets.only(top: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Do Something',
+            style: blackTextStyle.copyWith(
+              fontWeight: semiBold,
+              fontSize: 16,
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              HomeServiceItem(
+                title: 'Top Up',
+                iconUrl: '${assetImage}ic_topup.png',
+                onPressed: () {},
+              ),
+              HomeServiceItem(
+                title: 'Send',
+                iconUrl: '${assetImage}ic_send.png',
+                onPressed: () {},
+              ),
+              HomeServiceItem(
+                title: 'Withdraw',
+                iconUrl: '${assetImage}ic_withdraw.png',
+                onPressed: () {},
+              ),
+              HomeServiceItem(
+                title: 'More',
+                iconUrl: '${assetImage}ic_more.png',
+                onPressed: () {},
+              ),
+            ],
           )
         ],
       ),
