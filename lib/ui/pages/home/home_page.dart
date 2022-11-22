@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           buildProfile(),
           buildCardWidget(),
+          buildLevel(),
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -203,6 +204,56 @@ class _HomePageState extends State<HomePage> {
               fontSize: 24,
             ),
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildLevel() {
+    return Container(
+      margin: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.all(22),
+      decoration: BoxDecoration(
+        color: kPrimaryColor,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text(
+                'Level 1',
+                style: blackTextStyle.copyWith(
+                  fontWeight: regular,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                '55% ',
+                style: greenTextStyle.copyWith(
+                  fontWeight: semiBold,
+                ),
+              ),
+              Text(
+                'of Rp 20.000',
+                style: blackTextStyle.copyWith(
+                  fontWeight: semiBold,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(55),
+            child: const LinearProgressIndicator(
+              value: 0.55,
+              minHeight: 5,
+              backgroundColor: kLightBackgroundColor,
+              valueColor: AlwaysStoppedAnimation(kGreenColor),
+            ),
+          )
         ],
       ),
     );
