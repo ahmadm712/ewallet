@@ -30,7 +30,7 @@ TextStyle blueTextStyle = GoogleFonts.poppins(
 );
 
 TextStyle greenTextStyle = GoogleFonts.poppins(
-  color: kBlueColor,
+  color: kGreenColor,
 );
 
 // Font Weight
